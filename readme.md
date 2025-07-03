@@ -163,7 +163,6 @@ This frontend is connected to the Django REST API using **Axios** and manages JW
 | Take Quiz with Timer        | ✅       | ❌       |
 | Auto-Grade MCQs             | ✅       | ✅       |
 | Manual Grading (Subjective) | ❌       | ✅       |
-| Export Results to CSV       | ❌       | ✅       |
 | View Top Scores             | ❌       | ✅       |
 
 ---
