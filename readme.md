@@ -28,6 +28,7 @@ This system allows faculty to create quizzes, add questions (both MCQ and subjec
 5. View results after submission
 
 🧠 Project Structure
+```
 Quiz_Management_System/
 ├── config/             # Django project settings
 ├── quiz/               # Django app: models, views, serializers
@@ -37,44 +38,68 @@ Quiz_Management_System/
 ├── .env                # (Not pushed) Secure secrets
 ├── .gitignore
 ├── README.md
-
+```
 🛠️ How to Set Up Locally and Run....
 
 Step 1: Clone the Project
+```bash
 git clone https://github.com/anvithas2005/Quiz_Management_System.git 
 cd Quiz_Management_System
-
+```
 Step 2: Set Up Backend (Django)
-python -m venv anvi
-anvi\Scripts\activate (for windows)
+```bash
+python -m venv env
+```
+```bash
+env\Scripts\activate (for windows)
+```
+```bash
 pip install -r requirements.txt
+```
 
 Step 3: Add Environment Variables
 
 Create a .env file in the root (Quiz_Management_System/) and add:
-
+```bash
 DB_NAME=quiz_db
 DB_USER=postgres
 DB_PASSWORD=your_password_here
 SECRET_KEY=your_django_secret_key_here
+```
 
 Step 4: Run Migrations and Start Backend
+```bash
 python manage.py makemigrations
 python manage.py migrate
 python manage.py runserver
+```
 
 ✅ Your Django API is running at: http://localhost:8000
 
 Step 5: Set Up Frontend (React)
+```bash
 cd quiz-frontend
 npm install
 npm start
+```
 
 ✅ React frontend will run at: http://localhost:3000
 
+This frontend is connected to the Django REST API using Axios and manages JWT tokens in local storage for secure authentication. Role-based routing is implemented using React Router and user context.
+
+🧰 Frontend Libraries Used
+```
+1.React.js – Core framework for building the UI
+2.React Router DOM – Enables routing between pages
+3.Axios – Handles communication with Django API endpoints
+4.JWT Decode – Decodes JWT tokens stored in local storage
+5.Context API – Used to manage global user state and authentication
+6.React Hooks – For state, side effects, and lifecycle handling
+7.Basic CSS – Simple styling without external frameworks
+```
 
 🔐 How JWT Authentication Works
-
+```
 • This project uses JWT (JSON Web Tokens) for secure, stateless user authentication. Here’s how it works:
 • When a user logs in, the backend issues a JWT token that contains the user's ID and role (student or faculty).
 • This token is saved in the browser's local storage and attached to every request using Axios interceptors.
@@ -83,14 +108,7 @@ npm start
 • The system is protected from unauthorized access by checking tokens in Django using SimpleJWT middleware and permissions.
 
 🔒 This approach makes the system scalable, secure, and easy to extend for mobile or third-party clients.
-
-
-📦 .env Example (For Setup)
-
-DB_NAME=quiz_db
-DB_USER=postgres
-DB_PASSWORD=my_password
-SECRET_KEY=my_secret_key
+```
 
 🛑 Do not push .env to GitHub. Already ignored in .gitignore 
 
