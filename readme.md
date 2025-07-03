@@ -14,7 +14,7 @@ A full-stack web application designed for managing quizzes with two user roles: 
 
 ## 🎯 What This Project Does
 
-This system allows faculty to create quizzes, add questions (both MCQ and subjective), and track student submissions. Students can log in, attempt quizzes with a timer, and view their results. Faculty can also grade subjective answers and export results.
+This system allows faculty to create quizzes, add questions (both MCQ and subjective), and track student submissions. Students can log in, attempt quizzes with a timer, and view their results. Faculty can also grade subjective answers.
 
 ---
 
